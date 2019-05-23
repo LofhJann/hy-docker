@@ -69,3 +69,30 @@ Secret message is:
 "Docker is easy"
 Thu, 23 May 2019 12:05:56 GMT
 ~~~~
+
+## 1.5
+
+~~~~
+[janne@Janne-Thinkpad ~]$ docker run -it ubuntu
+root@c51e9e04dad1:/# apt-get update
+.........
+root@c51e9e04dad1:/# apt-get install curl  
+.........
+root@c51e9e04dad1:/# exit
+[janne@Janne-Thinkpad ~]$ docker container ls -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS               NAMES
+c51e9e04dad1        ubuntu              "/bin/bash"         3 minutes ago       Exited (0) 42 seconds ago                       blissful_torvalds
+[janne@Janne-Thinkpad ~]$ docker start c51e9e04dad1
+c51e9e04dad1
+[janne@Janne-Thinkpad ~]$ docker exec -it c51e9e04dad1 sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
+Input website:
+helsinki.fi
+Searching..
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="http://www.helsinki.fi/">here</a>.</p>
+</body></html>
+~~~~
