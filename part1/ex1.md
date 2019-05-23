@@ -34,3 +34,38 @@ Give me the password: basics
 You found the correct password. Secret message is:
 "This is the secret message"
 ~~~~
+
+## 1.4
+
+~~~~
+[janne@Janne-Thinkpad part1]$ docker run --detach devopsdockeruh/exec_bash_exercise
+Unable to find image 'devopsdockeruh/exec_bash_exercise:latest' locally
+latest: Pulling from devopsdockeruh/exec_bash_exercise
+741437d97401: Pull complete 
+34d8874714d7: Pull complete 
+0a108aa26679: Pull complete 
+7f0334c36886: Pull complete 
+65c95cb8b3be: Pull complete 
+a36b708560f8: Pull complete 
+4090f912e6c7: Pull complete 
+ce5fe2607c2e: Pull complete 
+9400f5f657d6: Pull complete 
+c4919883f7fa: Pull complete 
+Digest: sha256:c463832132d1fb0b8b3b60348a6fc36fda7512a4ef2d1050e8bea7b6a6d7a2f3
+Status: Downloaded newer image for devopsdockeruh/exec_bash_exercise:latest
+d946b92a0db44d08fe844d465b7ca54371920a1ab32f89c97cb332bd4a3335c1
+[janne@Janne-Thinkpad part1]$ docker exec -it d946b92a0db4 tail -f ./logs.txt
+Thu, 23 May 2019 12:05:26 GMT
+Thu, 23 May 2019 12:05:29 GMT
+Thu, 23 May 2019 12:05:32 GMT
+Thu, 23 May 2019 12:05:35 GMT
+Secret message is:
+"Docker is easy"
+Thu, 23 May 2019 12:05:41 GMT
+Thu, 23 May 2019 12:05:44 GMT
+Thu, 23 May 2019 12:05:47 GMT
+Thu, 23 May 2019 12:05:50 GMT
+Secret message is:
+"Docker is easy"
+Thu, 23 May 2019 12:05:56 GMT
+~~~~
